@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, EventTableEntity @event, string id, TraceWriter log)
 {
-    log.Info("C# HTTP trigger function processed a request.");
+    log.Info("GetEvent function was called.");
     if (@event == null)    
     {
         log.Warning($"failed to find event {id}");
