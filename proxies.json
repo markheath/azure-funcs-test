@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json.schemastore.org/proxies",
+    "proxies": {
+        "Root": {
+            "matchCondition": {
+                "route": "/"
+            },
+            "backendUri": "%PROXY_TARGET_URL_AND_CONTAINER%/index.html"
+        },
+        "CssPassthrough": {
+            "matchCondition": {
+                "route": "/css/{*restOfPath}"
+            },
+            "backendUri": "%PROXY_TARGET_URL_AND_CONTAINER%/css/{restOfPath}"
+        },
+        "ScriptsPassthrough": {
+            "matchCondition": {
+                "route": "/scripts/{*restOfPath}"
+            },
+            "backendUri": "%PROXY_TARGET_URL_AND_CONTAINER%/scripts/{restOfPath}"
+        }
+    }
+}
